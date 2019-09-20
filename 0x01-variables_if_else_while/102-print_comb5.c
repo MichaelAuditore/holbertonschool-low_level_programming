@@ -2,7 +2,7 @@
 
 /**
  * main - Entry point
- *
+ * This function works to print a number succession
  * Return: Always 0 (Success)
  */
 int main(void)
