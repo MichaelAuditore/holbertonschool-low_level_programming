@@ -1,5 +1,6 @@
 #include <stdio.h>
-#include <string.h>
+#include "holberton.h"
+
 /**
  * main - start program
  * this function display a string Holberton
@@ -7,15 +8,12 @@
  */
 int main(void)
 {
-	putchar('H');
-	putchar('o');
-	putchar('l');
-	putchar('b');
-	putchar('e');
-	putchar('r');
-	putchar('t');
-	putchar('o');
-	putchar('n');
-	putchar('\n');
+	char holberton [] = {'H','o','l','b','e','r','t','o','n'};
+	int length = sizeof(holberton);
+	int a;
+
+	for(a = 0 ; a < length ; a++ )
+		_putchar(holberton[a]);
+	_putchar('\n');
 	return (0);
 }
