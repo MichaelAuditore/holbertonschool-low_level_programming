@@ -11,7 +11,7 @@ int _abs(int a)
 	int sum = 0;
 
 	if (a <= 0)
-		sum = (a - a) + (-a);
+		sum = a - (a * 2);
 	else
 		sum = a;
 	return (sum);
