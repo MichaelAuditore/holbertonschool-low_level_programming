@@ -8,11 +8,11 @@
  */
 int main(void)
 {
-	char holberton [] = {'H','o','l','b','e','r','t','o','n'};
+	char holberton [] = {'H', 'o', 'l', 'b', 'e', 'r', 't', 'o', 'n'};
 	int length = sizeof(holberton);
 	int a;
 
-	for(a = 0 ; a < length ; a++ )
+	for (a = 0 ; a < length ; a++)
 		_putchar(holberton[a]);
 	_putchar('\n');
 	return (0);
