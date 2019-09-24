@@ -10,10 +10,10 @@ int _abs(int a)
 {
 	int sum = 0;
 
-	if (c <= 0)
-		sum = (c - c) + (-c);
+	if (a <= 0)
+		sum = (a - a) + (-a);
 	else
-		sum = c;
+		sum = a;
 	return (sum);
 }
 
