@@ -1,4 +1,22 @@
 #include "holberton.h"
+/**
+ * _abs - initilize the program
+ * This function will print the absolute value of a number
+ * @c: is the char to evaluate
+ *
+ * Return: absolute value
+ */
+int _abs(int c)
+{
+	int sum = 0;
+
+	if (c < 0)
+		sum = (c - c) + (-c);
+	else
+		sum = c;
+	return (sum);
+}
+
 
 /**
  * print_last_digit - initialize the program
@@ -7,16 +25,12 @@
  *
  * Return: last digit
  */
-
 int print_last_digit(int c)
 {
 	int a;
 
-	if (c < 0)
-		a = (c - c) + (-c);
-	else
-		a = c;
-	a = a % 10;
+	a = _abs(c);
+	a %= 10;
 	_putchar(a + '0');
 	return (a);
 }
