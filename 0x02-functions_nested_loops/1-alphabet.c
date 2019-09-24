@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "holberton.h"
 
 /**
  * main - start program
@@ -10,7 +10,7 @@ int main(void)
 	int a;
 
 	for (a = 'a' ; a <= 'z' ; a++)
-		putchar(a);
-	putchar('\n');
+		_putchar(a);
+	_putchar('\n');
 	return (0);
 }
