@@ -16,22 +16,27 @@ void times_table(void)
 	{
 		_putchar('0');
 		b = 1;
-		while(b < 10)
+		while (b < 10)
 		{
 			c = a * b++;
 			_putchar(',');
 			_putchar(' ');
 			_putchar(' ');
-			if(c < 10)
+			if (c < 10)
 			{
 				_putchar(c + '0');
 			}
-			else if(c >= 10 && c < 100)
+			else if (c >= 10 && c < 100)
 			{
 				_putchar(c / 10 + '0');
 				_putchar(c % 10 + '0');
 			}
-			
+			else
+			{
+				_putchar(c / 100 + '0');
+				_putchar(c / 10 % 10 + '0');
+				_putchar(c % 10 + '0');
+			}
 		}
 		_putchar('\n');
 		a++;
