@@ -21,9 +21,9 @@ void times_table(void)
 			c = a * b++;
 			_putchar(',');
 			_putchar(' ');
-			_putchar(' ');
 			if (c < 10)
 			{
+				_putchar(' ');
 				_putchar(c + '0');
 			}
 			else if (c >= 10 && c < 100)
