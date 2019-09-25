@@ -14,7 +14,7 @@ int main(void)
 
 	printf("%u, ", a);
 	printf("%u, ", b);
-	while (c < 48)
+	while (c < 26)
 	{
 		if (a < b)
 		{
@@ -23,7 +23,7 @@ int main(void)
 		}
 		if (b < a)
 		{
-			if (c == 47)
+			if (c == 25)
 			{
 				printf("%u", b + a);
 				break;
