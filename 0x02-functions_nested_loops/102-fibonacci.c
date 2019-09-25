@@ -17,7 +17,7 @@ int main(void)
 	while (c < 50)
 	{
 		if (c == 49)
-			printf("%lu\n", fi);
+			printf("%lu", fi);
 		else
 			printf("%lu, ", fi);
 		a = b;
@@ -25,5 +25,6 @@ int main(void)
 		fi = a + b;
 		c++;
 	}
+	printf("\n");
 	return (0);
 }
