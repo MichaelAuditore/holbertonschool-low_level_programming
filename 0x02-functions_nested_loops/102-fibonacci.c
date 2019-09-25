@@ -1,9 +1,6 @@
 #include <stdio.h>
-
 /**
  * main - start the program
- * This function displays the first 50 fibonacci numbers
- *
  * Return: Always 0
  */
 int main(void)
