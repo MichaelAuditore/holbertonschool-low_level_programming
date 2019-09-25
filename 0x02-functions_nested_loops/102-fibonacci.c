@@ -7,17 +7,16 @@
  */
 int main(void)
 {
-	long int a = 1;
-	long int b = 2;
+	long int a = 0;
+	long int b = 1;
 	long int c = 0;
-	long int d = 3;
+	long int d = 0;
 
-	printf("1, 2, ");
-	while (c < 49)
+	while (c < 52)
 	{
 		d = a + b;
 		printf("%lu", d);
-		if (c == 48)
+		if (c == 51)
 		{
 		}
 		else
