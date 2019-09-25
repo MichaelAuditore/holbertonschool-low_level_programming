@@ -24,7 +24,10 @@ int main(void)
 		if (b < a)
 		{
 			if (c == 47)
+			{
 				printf("%u", b + a);
+				break;
+			}
 			else
 				printf("%u, ", b + a);
 			b = b + a;
