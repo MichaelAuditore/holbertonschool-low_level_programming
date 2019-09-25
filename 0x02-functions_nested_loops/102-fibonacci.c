@@ -13,10 +13,10 @@ int main(void)
 	long int d = 3;
 
 	printf("1, 2, ");
-	while (c < 47)
+	while (c < 48)
 	{
 		printf("%lu", d);
-		if(c != 46)
+		if(c != 47)
 			printf(", ");
 		a = b;
 		b = d;
