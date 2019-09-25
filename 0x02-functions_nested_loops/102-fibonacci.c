@@ -11,15 +11,13 @@ int main(void)
 	long int a = 0;
 	long int b = 1;
 	long int fi = 0;
-	int c = 0;
-
-	printf("1, 2, ");
+	long int c = 0;
+	
 	while (c < 50)
 	{
-		if (c == 49)
-			printf("%lu", fi);
-		else
-			printf("%lu, ", fi);
+		printf("%lu" fi);
+		if (c != 49)
+			printf(", ");
 		a = b;
 		b = fi;
 		fi = a + b;
