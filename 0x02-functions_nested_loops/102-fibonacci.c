@@ -12,11 +12,11 @@ int main(void)
 	long int c = 0;
 	long int d = 0;
 
-	while (c < 52)
+	while (c < 50)
 	{
 		d = a + b;
 		printf("%lu", d);
-		if (c == 51)
+		if (c == 49)
 		{
 		}
 		else
