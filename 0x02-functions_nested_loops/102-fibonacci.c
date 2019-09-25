@@ -13,14 +13,19 @@ int main(void)
 	long int d = 3;
 
 	printf("1, 2, ");
-	while (c < 48)
+	while (c < 49)
 	{
+		d = a + b;
 		printf("%lu", d);
-		if(c != 47)
+		if (c == 48)
+		{
+		}
+		else
+		{
 			printf(", ");
+		}
 		a = b;
 		b = d;
-		d = a + b;
 		c++;
 	}
 	printf("\n");
