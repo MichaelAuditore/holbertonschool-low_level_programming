@@ -14,7 +14,7 @@ int main(void)
 
 	printf("%ld, ", a);
 	printf("%ld, ", b);
-	while (c < 27)
+	while (c < 49)
 	{
 		if (a < b)
 		{
@@ -23,7 +23,7 @@ int main(void)
 		}
 		if (b < a)
 		{
-			if (c == 26)
+			if (c == 48)
 			{
 				printf("%ld", b + a);
 				break;
