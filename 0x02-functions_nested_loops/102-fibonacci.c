@@ -13,8 +13,7 @@ int main(void)
 	long fi = 3;
 	int c = 1;
 
-	printf("%ld, ", a);
-	printf("%ld, ", b);
+	printf("1, 2, ");
 	while (c < 47)
 	{
 		printf("%ld, ", fi);
