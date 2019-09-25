@@ -17,7 +17,7 @@ int main(void)
 	while (c < 50)
 	{
 		if (c == 49)
-			printf("%lu", fi);
+			printf("%lu\n", fi);
 		else
 			printf("%lu, ", fi);
 		a = b;
