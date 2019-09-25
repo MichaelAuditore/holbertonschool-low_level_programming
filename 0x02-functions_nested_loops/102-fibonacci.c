@@ -10,30 +10,19 @@ int main(void)
 {
 	long a = 1;
 	long b = 2;
+	long fi = 3;
 	int c = 1;
 
 	printf("%ld, ", a);
 	printf("%ld, ", b);
-	while (c < 49)
+	while (c < 47)
 	{
-		if (a < b)
-		{
-			printf("%ld, ", a + b);
-			a = a + b;
-		}
-		if (b < a)
-		{
-			if (c == 48)
-			{
-				printf("%ld", b + a);
-				break;
-			}
-			else
-				printf("%ld, ", b + a);
-			b = b + a;
-		}
+		printf("%ld, ", fi);
+		a = b;
+		b = fi;
+		fi = a + b;
 		c++;
 	}
-	printf("\n");
+	printf("%ld\n", fi);
 	return (0);
 }
