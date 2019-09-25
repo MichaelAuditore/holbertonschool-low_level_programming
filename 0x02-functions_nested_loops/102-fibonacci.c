@@ -8,20 +8,22 @@
  */
 int main(void)
 {
-	long a = 1;
-	long b = 2;
-	long fi = 3;
-	int c = 1;
+	long int a = 0;
+	long int b = 1;
+	long int fi = 0;
+	int c = 0;
 
 	printf("1, 2, ");
-	while (c < 47)
+	while (c < 50)
 	{
-		printf("%ld, ", fi);
+		if (c == 49)
+			printf("%lu", fi);
+		else
+			printf("%lu, ", fi);
 		a = b;
 		b = fi;
 		fi = a + b;
 		c++;
 	}
-	printf("%ld\n", fi);
 	return (0);
 }
