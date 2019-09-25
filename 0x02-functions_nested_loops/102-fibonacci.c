@@ -8,21 +8,26 @@
  */
 int main(void)
 {
-	long int a = 0;
-	long int b = 1;
-	long int fi = 0;
-	long int c = 0;
-	
-	while (c < 50)
-	{
-		fi = a + b;
-		printf("%lu", fi);
-		if (c != 49)
-			printf(", ");
-		a = b;
-		b = fi;
-		c++;
-	}
-	printf("\n");
-	return (0);
+        long int a = 0;
+        long int b = 1;
+        long int c = 0;
+        long int d = 0;
+
+        while (c <= 49)
+        {
+                d = a + b;
+                printf("%lu", d);
+                if (c == 49)
+                {
+                }
+                else
+                {
+                        printf(", ");
+                }
+                a = b;
+                b = d;
+                c++;
+        }
+        printf("\n");
+        return (0);
 }
