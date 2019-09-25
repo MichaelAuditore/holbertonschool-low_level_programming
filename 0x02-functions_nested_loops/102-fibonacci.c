@@ -8,28 +8,28 @@
  */
 int main(void)
 {
-	int a = 1;
-	int b = 2;
+	long a = 1;
+	long b = 2;
 	int c = 1;
 
-	printf("%u, ", a);
-	printf("%u, ", b);
+	printf("%ld, ", a);
+	printf("%ld, ", b);
 	while (c < 27)
 	{
 		if (a < b)
 		{
-			printf("%u, ", a + b);
+			printf("%ld, ", a + b);
 			a = a + b;
 		}
 		if (b < a)
 		{
 			if (c == 26)
 			{
-				printf("%u", b + a);
+				printf("%ld", b + a);
 				break;
 			}
 			else
-				printf("%u, ", b + a);
+				printf("%ld, ", b + a);
 			b = b + a;
 		}
 		c++;
