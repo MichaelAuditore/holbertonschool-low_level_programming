@@ -13,7 +13,7 @@ int main(void)
 
 	while (a < 1024)
 	{
-		if ((a % 3 == 0) || (a % 5 == 0))
+		if (a % 3 == 0 || a % 5 == 0)
 			b = b + a;
 	}
 	printf("%d\n", b);
