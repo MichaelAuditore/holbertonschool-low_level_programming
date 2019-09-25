@@ -10,11 +10,11 @@ int main(void)
 {
 	int a = 1;
 	int b = 2;
-	int c = 0;
+	int c = 2;
 
 	printf("%u, ", a);
 	printf("%u, ", b);
-	while (c < 26)
+	while (c < 27)
 	{
 		if (a < b)
 		{
@@ -23,7 +23,7 @@ int main(void)
 		}
 		if (b < a)
 		{
-			if (c == 25)
+			if (c == 26)
 			{
 				printf("%u", b + a);
 				break;
