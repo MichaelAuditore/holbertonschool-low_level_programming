@@ -7,19 +7,20 @@
  */
 int main(void)
 {
-	long int a = 0;
-	long int b = 1;
+	long int a = 1;
+	long int b = 2;
 	long int c = 0;
-	long int d = 0;
+	long int d = 3;
 
-	while (c <= 49)
+	printf("1, 2, ");
+	while (c < 47)
 	{
-		d = a + b;
 		printf("%lu", d);
-		if (c != 49)
+		if(c != 46)
 			printf(", ");
 		a = b;
 		b = d;
+		d = a + b;
 		c++;
 	}
 	printf("\n");
