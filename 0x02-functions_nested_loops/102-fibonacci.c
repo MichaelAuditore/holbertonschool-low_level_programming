@@ -15,12 +15,12 @@ int main(void)
 	
 	while (c < 50)
 	{
-		printf("%lu" fi);
+		fi = a + b;
+		printf("%lu", fi);
 		if (c != 49)
 			printf(", ");
 		a = b;
 		b = fi;
-		fi = a + b;
 		c++;
 	}
 	printf("\n");
