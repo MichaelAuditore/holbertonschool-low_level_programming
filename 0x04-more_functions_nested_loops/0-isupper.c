@@ -2,7 +2,7 @@
 
 /**
  * _isupper - start the program
- *
+ * @c: Integer parameter
  * Return: 1 is upper 0 is lower
  */
 int _isupper(int c)
