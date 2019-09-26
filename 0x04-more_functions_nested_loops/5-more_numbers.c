@@ -19,6 +19,7 @@ void more_numbers(void)
 			_putchar(c);
 			if (c == 1 & b > 15)
 				_putchar(b % 10 + '0');
+			b++;
 		}
 	}
 	_putchar('\n');
