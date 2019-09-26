@@ -9,6 +9,9 @@ int _isdigit(int c)
 {
 	int a;
 
-	a = ((c >= 97 && c <= 122) || (c >= 65 && c <= 90) ? 1 : 0);
-	return (a);
+	if ((c >= 48 && c <= 57))
+	{
+		return (1);
+	}
+	return (0);
 }
