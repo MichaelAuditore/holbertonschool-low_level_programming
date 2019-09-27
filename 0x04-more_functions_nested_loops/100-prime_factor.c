@@ -7,28 +7,21 @@
  */
 int main(void)
 {
-	unsigned long it;
+	unsigned long it = 2;
 	unsigned long cons = 612852475143;
 
-	for (it = 2 ; it <= cons ; )
+	while (it < cons)
 	{
 		if (cons % it == 0)
 		{
 			cons = cons / it;
-			it = it;
+			it = 2;
 		}
 		else
 		{
 			it++;
 		}
-		if (cons == 1)
-		{
-			printf("%ld", it);
-		}
 	}
-	if (cons == 1)
-	{
-		printf("%ld\n", it);
-	}
+	printf("%ld\n", it);
 	return (0);
 }
