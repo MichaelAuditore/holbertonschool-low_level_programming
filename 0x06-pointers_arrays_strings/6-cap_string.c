@@ -16,7 +16,7 @@ char *cap_string(char *c)
 		if (c[i] >= 97 && c[i] <= 122)
 		{
 			j = 0;
-			for (; signals[j]; j++)
+			for (; signals[j] != '\0'; j++)
 			{
 				if (c[i - 1] == signals[j])
 				{
