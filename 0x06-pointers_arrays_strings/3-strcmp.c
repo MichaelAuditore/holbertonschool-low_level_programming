@@ -8,13 +8,22 @@
  */
 int _strcmp(char *s1, char *s2)
 {
-	int sum1 = 0;
-	int sum2 = 0;
-	int i;
+	int i = 0;
+	int res = 0;
 
-	for (i = 0; s1[i] != '\0'; i++)
-		sum1 = sum1 + 10 + (s1[i] - '0');
-	for (i = 0; s2[i] != '\0'; i++)
-		sum2 = sum2 + 10 + (s2[i] - '0');
-	return (sum1 - sum2);
+	while (i[s1] != '\0')
+	{
+		if (s1[i] < s2[i])
+		{
+			res = (s1[i] - s2[i]);
+			break;
+		}
+		if (s1[i] > s2[i])
+		{
+			res = (s1[i] - s2[i]);
+			break;
+		}
+		i++;
+	}
+	return (res);
 }
