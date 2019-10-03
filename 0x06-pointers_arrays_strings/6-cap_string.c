@@ -21,7 +21,6 @@ char *cap_string(char *c)
 				if (c[i - 1] == signals[j])
 				{
 					c[i] = c[i] - 32;
-					break;
 				}
 			}
 		}
