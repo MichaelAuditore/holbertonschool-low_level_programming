@@ -18,7 +18,8 @@ char *cap_string(char *c)
 			j = 0;
 			for (; signals[j] != '\0'; j++)
 			{
-				if (c[i - 1] == signals[j])
+				if (c[i - 1] == signals[j] ||
+				    (c[0] >= 97 && c[0] <= 122))
 				{
 					c[i] = c[i] - 32;
 				}
