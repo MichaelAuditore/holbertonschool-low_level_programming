@@ -6,29 +6,19 @@
  */
 char *leet(char *c)
 {
-	int i = 0;
+	int i, j;
+	char lets[11] = {'a', 'A', 'E', 'e', 'o', 'O', 'l', 'L', 't', 'T'};
+	char numbers[11] = {'4', '4', '3', '3', '0', '0', '1', '1', '7', '7'};
 
+	i = 0;
 	while (c[i] != '\0')
 	{
-		if (c[i] == 'a' || c[i] == 'A')
+		for (j = 0; lets[j] != '\0'; j++)
 		{
-			c[i] = 52;
-		}
-		else if (c[i] == 'e' || c[i] == 'E')
-		{
-			c[i] = 51;
-		}
-		else if (c[i] == 'o' || c[i] == 'O')
-		{
-			c[i] = 48;
-		}
-		else if (c[i] == 'l' || c[i] == 'L')
-		{
-			c[i] = 49;
-		}
-		if (c[i] == 't' || c[i] == 'T')
-		{
-			c[i] = 55;
+			if (c[i] == lets[j])
+			{
+				c[i] = numbers[j];
+			}
 		}
 		i++;
 	}
