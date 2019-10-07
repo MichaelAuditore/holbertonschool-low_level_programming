@@ -14,11 +14,12 @@ char *_strstr(char *haystack, char *needle)
 	{
 		for (; *haystack; haystack++)
 		{
-			if (*haystack == needle[i] && *(haystack + 1) == needle[i + 1])
+			if ((*haystack == needle[i])
+			    && (*(haystack + 1) == needle[i + 1]))
 			{
 				return (haystack);
 			}
 		}
 	}
-	return (*haystack == needle[i] ? haystack : 0);
+	return (0);
 }
