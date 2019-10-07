@@ -20,5 +20,5 @@ char *_strstr(char *haystack, char *needle)
 			}
 		}
 	}
-	return (0);
+	return (*haystack == needle[i] ? haystack : 0);
 }
