@@ -19,15 +19,15 @@ void print_diagsums(int *a, int size)
 
 	while (i < max)
 	{
-		sum += a[i];
+		add += a[i];
 		i = i + size + 1;
 	}
 	i = size - 1;
 	while (i < (max - 1))
 	{
-		sum2 += a[i];
+		add2 += a[i];
 		i = i + (size - 1);
 	}
 
-	printf("%d, %d\n", sum, sum2);
+	printf("%d, %d\n", add, add2);
 }
