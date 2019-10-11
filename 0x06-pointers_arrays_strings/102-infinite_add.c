@@ -34,8 +34,8 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		len1--;
 		len2--;
 	}
-	r[i] = sum + '0';
-	if (size_r > lenr && i < 0)
+	if (i < 0 && size_r > lenr)
 		return (0);
+	r[i] = sum + '0';
 	return (r + i);
 }
