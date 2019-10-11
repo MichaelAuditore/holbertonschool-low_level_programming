@@ -10,34 +10,32 @@
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int sum, len1, len2;
+	int len1 = 0;
+	int len2 = 0;
+	int lenr = 0;
 	int i = size_r - 2;
-	for (len1 = 0; n1[len1] != '\0'; len1++)
-		;
-	for (len2 = 0; n2[len2] != '\0'; len2++)
-		;
-	len1 -= 1;
-	len2 -= 1;
-	sum = 0;
-	size_r -= 1;
-	while (size_r >= 0 && (len1 > 0 || len2 > 0))
+	int sum = 0;
+
+	r[size_r - 1]  = '\0';
+	while (r[lenr] != '\0')
+		lenr++;
+	while (n1[len1] != '\0')
+		len1++;
+	while (n2[len2] != '\0')
+		len2++;
+	len1--;
+	len2--;
+	while (i >= 0 && (len1 >= 0 || len2 >= 0))
 	{
-		sum += (len1 > 0) ? (n1[len1] - '0') : 0;
-		sum += (len2 > 0) ? (n2[len2] - '0') : 0;
-		r[size_r--] = sum % 10 + '0';
+		sum += (len1 >= 0 ? n1[len1] - '0' : 0);
+		sum += (len2 >= 0 ? n2[len2] - '0' : 0);
+		r[i--] = (sum % 10) + '0';
 		sum = sum / 10;
-		i--;
 		len1--;
 		len2--;
 	}
-	r[size_r] = '\0';
-
-	if (size_r > 0 && i < 0)
-	{
+	if (size_r > lenr && i < 0)
 		return (0);
-	}
-	else
-	{
-		return (r + i);
-	}
+	r[i] = sum + '0';
+	return (r + i);
 }
