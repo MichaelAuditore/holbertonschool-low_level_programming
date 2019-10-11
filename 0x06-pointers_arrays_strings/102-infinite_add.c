@@ -12,19 +12,15 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
 	int len1 = 0;
 	int len2 = 0;
-	int lenr = 0;
 	int i = size_r - 2;
 	int sum = 0;
 
 	r[size_r - 1]  = '\0';
-	while (r[lenr] != '\0')
-		lenr++;
+
 	while (n1[len1] != '\0')
 		len1++;
 	while (n2[len2] != '\0')
 		len2++;
-	if (size_r == lenr)
-		return (0);
 	len1--;
 	len2--;
 	while (i >= 0 && (len1 >= 0 || len2 >= 0))
@@ -36,7 +32,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		len1--;
 		len2--;
 	}
-	if (i < 0 && size_r > lenr)
+	if ((i < 0 && sum > 0))
+		return (0);
+	if (i < 0 && (len1 >= 0 || len2 >= 0))
 		return (0);
 	r[i] = sum + '0';
 	return (r + i);
