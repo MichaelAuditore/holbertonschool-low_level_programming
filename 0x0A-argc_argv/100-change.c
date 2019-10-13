@@ -10,8 +10,8 @@
 int main(int argc, char **argvc)
 {
 	int i;
-	long int cents = 0;
-	long int money = atoi(argvc[argc - 1]);
+	int cents = 0;
+	unsigned int money = atoi(argvc[argc - 1]);
 	int cent[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -19,25 +19,23 @@ int main(int argc, char **argvc)
 		printf("Error\n");
 		return (1);
 	}
-	if (money < 0)
+	if (atoi(argvc[argc - 1]) < 0)
 	{
 		printf("0\n");
 		return (0);
 	}
 	while (money > 0)
 	{
-		i = 0;
 		while (i < 5)
 		{
 			if (money % cent[i] == 0)
 			{
 				money -= cent[i];
 				cents++;
-				break;
 			}
-			i++;
+			money % cent[i] != 0 ? i++ : i;
 		}
 	}
-	printf("%ld\n", cents);
+	printf("%d\n", cents);
 	return (0);
 }
