@@ -10,8 +10,8 @@
 int main(int argc, char **argvc)
 {
 	int i;
-	int cents = 0;
-	int money = atoi(argvc[argc - 1]);
+	long int cents = 0;
+	long int money = atoi(argvc[argc - 1]);
 	int cent[5] = {25, 10, 5, 2, 1};
 
 	if (argc != 2)
@@ -38,6 +38,6 @@ int main(int argc, char **argvc)
 			i++;
 		}
 	}
-	printf("%d\n", cents);
+	printf("%ld\n", cents);
 	return (0);
 }
