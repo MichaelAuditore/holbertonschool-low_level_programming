@@ -26,5 +26,7 @@ char *_strdup(char *str)
 		j++;
 	}
 	nstr[i] = '\0';
+	if (nstr == NULL)
+		return (NULL);
 	return (nstr);
 }
