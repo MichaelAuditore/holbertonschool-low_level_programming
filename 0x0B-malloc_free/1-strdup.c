@@ -9,14 +9,16 @@
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
+	char *tmp;
 
 	while (i[src] != '\0')
 	{
-		i[dest] = i[src];
+		dest[i] = i[src];
 		i++;
 	}
-	i[dest] = '\0';
-	return (dest);
+	i[dest] = src[i];
+	tmp = dest;
+	return (tmp);
 }
 /**
  * _strdup - reallocate an array in newly allocated space in memory
@@ -32,8 +34,7 @@ char *_strdup(char *str)
 		i++;
 	if (str == NULL)
 		return (NULL);
-
-	nstr = (char *) malloc(i + 1 * sizeof(char));
+	nstr = (char *) malloc(i + 1);
 	if (nstr == NULL)
 		return (NULL);
 	_strcpy(nstr, str);
