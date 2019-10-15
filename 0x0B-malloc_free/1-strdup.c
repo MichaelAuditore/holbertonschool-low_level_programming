@@ -1,6 +1,23 @@
 #include "holberton.h"
-#include <string.h>
 #include <stdlib.h>
+/**
+ * _strcpy - store a copy of a pointer into another pointer
+ * @dest: Pointer one
+ * @src: Pointer two
+ * Return: Pointer
+ */
+char *_strcpy(char *dest, char *src)
+{
+	int i = 0;
+
+	while (i[src] != '\0')
+	{
+		i[dest] = i[src];
+		i++;
+	}
+	i[dest] = '\0';
+	return (dest);
+}
 /**
  * _strdup - reallocate an array in newly allocated space in memory
  * @str: starter address to reallocate
@@ -19,6 +36,6 @@ char *_strdup(char *str)
 	nstr = (char *) malloc(i + 1 * sizeof(char));
 	if (nstr == NULL)
 		return (NULL);
-	strcpy(nstr, str);
+	_strcpy(nstr, str);
 	return (nstr);
 }
