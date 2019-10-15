@@ -1,5 +1,5 @@
 #include "holberton.h"
-#include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 /**
  * _strdup - reallocate an array in newly allocated space in memory
@@ -10,7 +10,6 @@ char *_strdup(char *str)
 {
 	char *nstr;
 	int i = 0;
-	int j = 0;
 
 	while (str[i])
 		i++;
@@ -20,13 +19,6 @@ char *_strdup(char *str)
 	nstr = (char *) malloc(i + 1 * sizeof(char));
 	if (nstr == NULL)
 		return (NULL);
-	while (j < i)
-	{
-		nstr[j] = str[j];
-		j++;
-	}
-	nstr[i] = '\0';
-	if (nstr == NULL)
-		return (NULL);
+	strcpy(nstr, str);
 	return (nstr);
 }
