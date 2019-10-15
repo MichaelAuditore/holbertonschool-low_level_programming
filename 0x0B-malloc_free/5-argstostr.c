@@ -1,12 +1,53 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <string.h>
-#include <stdio.h>
 /**
- *
- *
- *
- *
+ * _strlen - returns the length of a given string
+ * @s: string to check the length of
+ * Return: returns the length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+/**
+ * _strcat - concatenates two strings
+ * @dest: pointer one
+ * @src: pointer two
+ * Return: A string
+ */
+char *_strcat(char *dest, char *src)
+{
+	int i = 0;
+	int j = 0;
+	char *tmp;
+
+	while (i[dest])
+	{
+		i++;
+	}
+	while (j[src])
+	{
+		i[dest] = j[src];
+		i++;
+		j++;
+		if (j[src] == '\0')
+			break;
+	}
+	tmp = dest;
+	return (tmp);
+}
+
+/**
+ * argstostr - add the arguments to an array and
+ * concatenate an new line to each one
+ * @ac: arguments counter
+ * @av: pointer to pointer of arguments
+ * Return: array with arguments
  */
 char *argstostr(int ac, char **av)
 {
@@ -19,17 +60,17 @@ char *argstostr(int ac, char **av)
 
 	while (i < ac)
 	{
-		len += strlen(av[i]) + 1;
+		len += _strlen(av[i]) + 1;
 		i++;
 	}
 	ar = (char *) malloc(len * sizeof(char));
 	i = 0;
 	while (i < ac)
 	{
-		strcat(ar, av[i++]);
-		strcat(ar, "\n");
+		_strcat(ar, av[i++]);
+		_strcat(ar, "\n");
 	}
-	if(!ar)
+	if (!ar)
 		return (NULL);
 	return (ar);
 }
