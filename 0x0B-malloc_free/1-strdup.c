@@ -1,6 +1,22 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
+ * _strlen - returns the length of a given string
+ *
+ *
+ * @s: string to check the length of
+ * Return: returns the length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+/**
  * _strcpy - store a copy of a pointer into another pointer
  * @dest: Pointer one
  * @src: Pointer two
@@ -11,12 +27,12 @@ char *_strcpy(char *dest, char *src)
 	int i = 0;
 	char *tmp;
 
-	while (i[src] != '\0')
+	while (src[i] != '\0')
 	{
-		dest[i] = i[src];
+		dest[i] = src[i];
 		i++;
 	}
-	i[dest] = src[i];
+	dest[i] = src[i];
 	tmp = dest;
 	return (tmp);
 }
@@ -28,13 +44,10 @@ char *_strcpy(char *dest, char *src)
 char *_strdup(char *str)
 {
 	char *nstr;
-	int i = 0;
 
-	while (str[i])
-		i++;
 	if (str == NULL)
 		return (NULL);
-	nstr = (char *) malloc(i + 1);
+	nstr = malloc(_strlen(str) + 1);
 	if (nstr == NULL)
 		return (NULL);
 	_strcpy(nstr, str);
