@@ -97,7 +97,7 @@ char **strtow(char *str)
 	split = malloc((wc + 1) * sizeof(*split));
 	if (split == NULL)
 		return (NULL);
-	i = j = lwc = 0;
+	i = j = ss = lwc = 0;
 	while (str[i] != '\0' && lwc != wc)
 	{
 		ss = 0;
