@@ -121,6 +121,6 @@ char **strtow(char *str)
 		split[lwc++][ss] = '\0';
 		i = j;
 	}
-	split[wc] = NULL;
+	split[wc] = '\0';
 	return (split);
 }
