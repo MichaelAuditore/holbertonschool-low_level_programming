@@ -116,11 +116,13 @@ char **strtow(char *str)
 				return (NULL);
 			}
 		}
+		if (split == NULL)
+			return (NULL);
 		while (str[i] != ' ' && str[i] != '\0')
 			split[lwc][ss++] = str[i++];
 		split[lwc++][ss] = '\0';
 		i = j;
 	}
-	split[wc] = '\0';
+	split[wc] = NULL;
 	return (split);
 }
