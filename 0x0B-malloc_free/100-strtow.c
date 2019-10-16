@@ -94,7 +94,7 @@ char **strtow(char *str)
 	splcpy = _strdup(str);
 	if (splcpy == NULL)
 		return (NULL);
-	split = malloc((wc + 1) * sizeof(*split));
+	split = malloc((wc + 1) * sizeof(char*));
 	if (split == NULL)
 		return (NULL);
 	i = j = ss = lwc = 0;
