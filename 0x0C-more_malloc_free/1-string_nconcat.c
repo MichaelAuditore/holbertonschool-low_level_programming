@@ -20,6 +20,8 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	while (s2[len2])
 		len2++;
 
+	s1 = (!s1) ? "" : s1;
+	s2 = (!s2) ? "" : s2;
 	if (n >= len2)
 		n = len2;
 
