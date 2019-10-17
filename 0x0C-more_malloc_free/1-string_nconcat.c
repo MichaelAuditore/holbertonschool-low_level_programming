@@ -77,6 +77,5 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		return (NULL);
 	_strcpy(str, st1);
 	_strncat(str, st2, n);
-	str[_strlen(st1) + n + 1] = '\0';
 	return (str);
 }
