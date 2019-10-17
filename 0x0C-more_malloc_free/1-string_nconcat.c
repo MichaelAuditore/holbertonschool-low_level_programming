@@ -63,26 +63,18 @@ char *_strcpy(char *dest, char *src)
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *str;
-	unsigned int i = n;
-	unsigned int ls1 = _strlen(s1);
-	unsigned int ls2 = _strlen(s2);
-	int j = 0;
+	char *st1 = s1;
+	char *st2 = s2;
 
-	if (ls1 <= 0)
-		s1 = "";
-	if (ls2 <= 0)
-		s2 = "";
+	if (st1 == NULL)
+		st1 = "";
+	if (st2 == NULL)
+		st2 = "";
 
-	if (i >= ls2)
-		i = ls2;
-	else
-		i = n;
-
-	str = malloc((ls1 + i) * sizeof(char));
-	while (str[j])
-		j++;
-	_strcpy(str, s1);
-	_strncat(str, s2, i);
-	str[ls1 + i + 1] = '\0';
+	(n > _strlen(st2)) ? (n = _strlen(st2)) : (n);
+	str = malloc((_strlen(st1) + n + 1) * sizeof(char));
+	_strcpy(str, st1);
+	_strncat(str, st2, n);
+	str[_strlen(st1) + n + 1] = '\0';
 	return (str);
 }
