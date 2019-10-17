@@ -68,8 +68,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	unsigned int ls2 = _strlen(s2);
 	int j = 0;
 
-	if (ls1 <= 0 || ls2 <= 0)
-		return (NULL);
+	if (ls1 <= 0)
+		s1 = "";
+	if (ls2 <= 0)
+		s2 = "";
 
 	if (i >= ls2)
 		i = ls2;
