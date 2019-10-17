@@ -18,11 +18,9 @@ unsigned int _strlen(char *s)
  */
 char *_strncat(char *dest, char *src, unsigned int n)
 {
-	int ld = 0;
+	int ld = _strlen(dest);
 	unsigned int i = 0;
 
-	for (; dest[ld] != '\0'; ld++)
-		;
 	while (i < n && src[i] != '\0')
 	{
 		dest[ld + i] = src[i];
@@ -30,27 +28,6 @@ char *_strncat(char *dest, char *src, unsigned int n)
 	}
 	dest[ld + i] = '\0';
 	return (dest);
-}
-/**
- * _strcpy - copies an entire string to a buffer
- * @src: source string to copy
- * @dest: buffer to copy string into
- * Return: returns pointer to copied string
- */
-char *_strcpy(char *dest, char *src)
-{
-	int i;
-	char *tmp;
-
-	i = 0;
-	while (src[i] != '\0')
-	{
-		dest[i] = src[i];
-		i++;
-	}
-	tmp = dest;
-
-	return (tmp);
 }
 
 /**
@@ -65,17 +42,22 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	char *str;
 	char *st1 = s1;
 	char *st2 = s2;
+	int i = 0;
 
 	if (st1 == NULL)
 		st1 = "";
 	if (st2 == NULL)
 		st2 = "";
 
-	(n > _strlen(st2)) ? (n = _strlen(st2)) : 1;
+	(n >= _strlen(st2)) ? (n = _strlen(st2)) : 1;
 	str = malloc((_strlen(st1) + n + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
-	_strcpy(str, st1);
+	while (s1[i] != '\0')
+	{
+		str[i] = s1[i];
+		i++;
+	}
 	_strncat(str, st2, n);
 	return (str);
 }
