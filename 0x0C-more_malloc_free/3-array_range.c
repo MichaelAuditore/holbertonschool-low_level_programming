@@ -8,19 +8,20 @@
  */
 int *array_range(int min, int max)
 {
-	int i = max - min;
-	int j = 0;
+	int size = max - min;
+	int i = 0;
+	int j = min;
 	int *p;
 
 	if (min > max)
 		return (NULL);
-	p = malloc((i + 1) * sizeof(int));
+	p = malloc((size) * sizeof(int));
 	if (p == NULL)
 		return (NULL);
-	while (min < max)
+	while (i < size)
 	{
-		p[j] = min;
-		min++;
+		p[i] = j;
+		i++;
 		j++;
 	}
 	return (p);
