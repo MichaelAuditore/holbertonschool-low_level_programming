@@ -71,8 +71,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 	if (st2 == NULL)
 		st2 = "";
 
-	(n > _strlen(st2)) ? (n = _strlen(st2)) : (n);
+	(n > _strlen(st2)) ? (n = _strlen(st2)) : 1;
 	str = malloc((_strlen(st1) + n + 1) * sizeof(char));
+	if (str == NULL)
+		return (NULL);
 	_strcpy(str, st1);
 	_strncat(str, st2, n);
 	str[_strlen(st1) + n + 1] = '\0';
