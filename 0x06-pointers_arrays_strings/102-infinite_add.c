@@ -37,6 +37,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (sum == 1)
 		r[i] = sum + '0';
 	else
-		return(r + i + 1);
+		return (r + i + 1);
 	return (r + i);
 }
