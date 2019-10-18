@@ -13,7 +13,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int len1 = 0;
 	int len2 = 0;
 	int i = size_r - 2;
-	int j = 0;
 	int sum = 0;
 
 	r[size_r - 1]  = '\0';
@@ -38,14 +37,6 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	if (sum == 1)
 		r[i] = sum + '0';
 	else
-	{
-		while (r[j] != '\0')
-		{
-			r[j] = r[j + 1];
-			if (r[j + 1] == '\0')
-				r[j] = '\0';
-			j++;
-		}
-	}
+		return(r + i + 1);
 	return (r + i);
 }
