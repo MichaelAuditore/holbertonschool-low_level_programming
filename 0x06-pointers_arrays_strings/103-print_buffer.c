@@ -1,32 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * print_spaces - print the spaces into final string
- * @pos: The last position
- * @size: The size of the string
- */
-void print_spaces(int pos, int size)
-{
-	if (pos % 2 != 0 && size % 2 == 0)
-	{
-		while (pos < size)
-		{
-			printf(" ");
-			printf(" ");
-			pos++;
-		}
-	}
-	if (pos % 2 == 0 && size % 2 != 0)
-	{
-		while (pos <= size)
-		{
-			printf(" ");
-			printf(" ");
-			pos++;
-		}
-	}
-}
-/**
  * print_chars - print 10 characters latest a new line
  * @b: Address of string to print
  * @pos: position to start to iterate
@@ -78,7 +52,12 @@ int hexa_values(char *b, int pos, int size)
 			printf("0%x", b[i]);
 		if (i == (size - 1) && size % 10 != 0)
 		{
-			print_spaces(i, s);
+			while (i < s)
+			{
+				printf(" ");
+				printf(" ");
+				i++;
+			}
 		}
 		i++;
 		if (i % 10 == 0 && i != 0)
