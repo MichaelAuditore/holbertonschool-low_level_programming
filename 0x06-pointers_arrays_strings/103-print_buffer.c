@@ -103,7 +103,7 @@ void print_buffer(char *b, int size)
 
 	if (*b == '\0')
 		size = -1;
-	while (i < size)
+	while (i <= size - 1)
 	{
 		li = i;
 		li = hexa_values(b, li, size);
