@@ -52,7 +52,7 @@ int hexa_values(char *b, int pos, int size)
 			printf("0%x", b[i]);
 		if (i == (size - 1) && size % 10 != 0)
 		{
-			while (i <= s - 1)
+			while (i <= s)
 			{
 				printf(" ");
 				i++;
