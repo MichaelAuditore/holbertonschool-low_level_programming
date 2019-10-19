@@ -4,10 +4,11 @@
  * print_spaces - print spaces into final string
  * @pos: Last position
  * @size: The size of String
+ * @old_size: The original size
  */
-void print_spaces(int pos, int size)
+void print_spaces(int pos, int size, int old_size)
 {
-	if (pos % 2 != 0 && size % 2 == 0)
+	if (pos % 2 != 0 && old_size - pos == 1)
 	{
 		while (pos < size)
 		{
@@ -16,7 +17,7 @@ void print_spaces(int pos, int size)
 			pos++;
 		}
 	}
-	if (pos % 2 == 0 && size % 2 != 0)
+	if (pos % 2 == 0 && old_size - pos == 1)
 	{
 		while (pos <= size)
 		{
@@ -78,7 +79,7 @@ int hexa_values(char *b, int pos, int size)
 			printf("0%x", b[i]);
 		if (i == (size - 1) && size % 10 != 0)
 		{
-			print_spaces(i, s);
+			print_spaces(i, s, size);
 		}
 		i++;
 		if (i % 10 == 0 && i != 0)
