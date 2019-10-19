@@ -19,12 +19,13 @@ void print_spaces(int pos, int size, int old_size)
 	}
 	if (pos % 2 == 0 && old_size - pos == 1)
 	{
-		while (pos <= size)
+		while (pos < size)
 		{
 			printf(" ");
 			printf(" ");
 			pos++;
 		}
+		printf(" ");
 	}
 }
 /**
