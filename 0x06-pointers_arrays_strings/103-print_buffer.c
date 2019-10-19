@@ -4,7 +4,6 @@
  * print_spaces - print spaces into final string
  * @pos: Last position
  * @size: The size of String
- * @old_size: The original size
  */
 void print_spaces(int pos, int size)
 {
@@ -14,7 +13,6 @@ void print_spaces(int pos, int size)
 		printf(" ");
 		pos++;
 	}
-	printf(" ");
 }
 /**
  * print_chars - print 10 characters latest a new line
