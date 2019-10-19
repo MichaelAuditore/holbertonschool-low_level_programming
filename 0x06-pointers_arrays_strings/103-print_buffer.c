@@ -10,9 +10,9 @@ void print_spaces(int pos, int size)
 	while (pos < size)
 	{
 		printf(" ");
-		printf(" ");
 		pos++;
 	}
+	printf(" ");
 }
 /**
  * print_chars - print 10 characters latest a new line
