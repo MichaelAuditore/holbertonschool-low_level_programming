@@ -10,7 +10,7 @@ void print_spaces(int pos, int size, int old)
 {
 	if (pos % 2 != 0)
 	{
-		while (old < size)
+		while (old <= size)
 		{
 			printf(" ");
 			printf(" ");
@@ -19,10 +19,12 @@ void print_spaces(int pos, int size, int old)
 	}
 	if (pos % 2 == 0)
 	{
-		while (old <= size)
+		while (old < size)
+		{
 			printf(" ");
 			printf(" ");
 			old++;
+		}
 	}
 }
 /**
