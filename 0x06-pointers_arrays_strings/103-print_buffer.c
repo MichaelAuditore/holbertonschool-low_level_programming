@@ -98,5 +98,4 @@ void print_buffer(char *b, int size)
 		lp = print_chars(b, j, size);
 		j = lp;
 	}
-	printf("\n");
 }
