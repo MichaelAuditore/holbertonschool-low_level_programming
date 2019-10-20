@@ -4,16 +4,25 @@
  * print_spaces - print the needed space to complete the lines
  * @pos: Final position of string
  * @size: Final Size of string when it's not multiply of 10
+ * @old: First size
  */
-void print_spaces(int pos)
+void print_spaces(int pos, int size, int old)
 {
-	while (pos % 10 != 0)
+	if (pos % 2 != 0)
 	{
-		printf(" ");
-		if (pos % 10 == 0)
-			break;
-		printf(" ");
-		pos++;
+		while (old < size)
+		{
+			printf(" ");
+			printf(" ");
+			pos++;
+		}
+	}
+	if (pos % 2 == 0)
+	{
+		while (old <= size)
+			printf(" ");
+			printf(" ");
+			old++;
 	}
 }
 /**
@@ -68,7 +77,7 @@ int hexa_values(char *b, int pos, int size)
 			printf("0%x", b[i]);
 		if (i == size - 1 && i % 2 != 0)
 		{
-			print_spaces(i);
+			print_spaces(i, s, size);
 		}
 		i++;
 		if (i % 10 == 0 && i != 0)
@@ -87,18 +96,14 @@ int hexa_values(char *b, int pos, int size)
 void print_buffer(char *b, int size)
 {
 	int i = 0;
-	int li;
 	int j = 0;
-	int lp;
 
 	if (*b == '\0')
 		size = -1;
 	while (i < size)
 	{
-		li = hexa_values(b, i, size);
-		i = li;
-		lp = print_chars(b, j, size);
-		j = lp;
+		i = hexa_values(b, i, size);
+		j = print_chars(b, j, size);
 	}
 	printf("\n");
 }
