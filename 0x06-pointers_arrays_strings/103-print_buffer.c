@@ -10,10 +10,10 @@ void print_spaces(int pos)
 	while (pos % 10 != 0)
 	{
 		printf(" ");
-		pos++;
 		if (pos % 10 == 0)
 			break;
 		printf(" ");
+		pos++;
 	}
 }
 /**
