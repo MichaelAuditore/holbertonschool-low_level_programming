@@ -7,7 +7,7 @@
  */
 void print_spaces(int pos, int size)
 {
-	while (pos < size - 1)
+	while (pos < size)
 	{
 		printf(" ");
 		printf(" ");
@@ -70,9 +70,11 @@ int hexa_values(char *b, int pos, int size)
 		}
 		i++;
 		if (i % 10 == 0 && i != 0)
+		{
+			printf(" ");
 			break;
+		}
 	}
-	printf(" ");
 	return (i);
 }
 /**
