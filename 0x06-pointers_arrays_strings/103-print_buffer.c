@@ -14,7 +14,7 @@ void print_spaces(int pos, int size, int old)
 		{
 			printf(" ");
 			printf(" ");
-			pos++;
+			old++;
 		}
 	}
 	if (pos % 2 == 0)
