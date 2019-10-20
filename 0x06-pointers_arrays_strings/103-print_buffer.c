@@ -11,6 +11,7 @@ void print_spaces(int pos, int size)
 	{
 		printf(" ");
 		printf(" ");
+		pos++;
 	}
 }
 /**
@@ -65,11 +66,7 @@ int hexa_values(char *b, int pos, int size)
 			printf("0%x", b[i]);
 		if (i == size - 1 && size % 10 != 0)
 		{
-			while (i <= s)
-			{
-				printf(" ");
-				i++;
-			}
+			print_spaces(i, s);
 		}
 		i++;
 		if (i % 10 == 0 && i != 0)
