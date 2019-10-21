@@ -25,7 +25,6 @@ int _strlen(char *s)
 char *_strcpy(char *dest, char *src)
 {
 	int i = 0;
-	char *tmp;
 
 	while (src[i] != '\0')
 	{
@@ -33,8 +32,7 @@ char *_strcpy(char *dest, char *src)
 		i++;
 	}
 	dest[i] = src[i];
-	tmp = dest;
-	return (tmp);
+	return (dest);
 }
 /**
  * _strdup - reallocate an array in newly allocated space in memory
@@ -62,23 +60,25 @@ char *_strdup(char *str)
  */
 dog_t *new_dog(char *name, float age, char *owner)
 {
-	struct dog *new_dog;
+	dog_t *new;
 
-	new_dog = malloc(sizeof(struct dog));
-	if (new_dog == NULL)
+	if (name == NULL || owner == NULL)
 		return (NULL);
-	new_dog->name = _strdup(name);
-	if (new_dog->name == NULL)
+	new = malloc(sizeof(dog_t));
+	if (new == NULL)
+		return (NULL);
+	new->name = _strdup(name);
+	if (new->name == NULL)
 	{
-		free(new_dog);
+		free(new);
 		return (NULL);
 	}
-	new_dog->age = age;
-	new_dog->owner = _strdup(owner);
-	if (new_dog->owner == NULL)
+	new->age = age;
+	new->owner = _strdup(owner);
+	if (new->owner == NULL)
 	{
-		free(new_dog);
+		free(new);
 		return (NULL);
 	}
-	return (new_dog);
+	return (new);
 }
