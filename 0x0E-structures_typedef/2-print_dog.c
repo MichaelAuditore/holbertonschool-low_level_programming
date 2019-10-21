@@ -6,9 +6,12 @@
  */
 void print_dog(struct dog *d)
 {
-	struct dog mydog = *d;
-
-	printf("Name: %s\n", mydog.name);
-	printf("Age: %f\n", mydog.age);
-	printf("Owner: %s\n", mydog.owner);
+	if (d)
+	{
+		printf("Name: %s\n", d->name);
+		printf("Age: %f\n", d->age);
+		printf("Owner: %s\n", d->owner);
+	}
+	else
+		return;
 }
