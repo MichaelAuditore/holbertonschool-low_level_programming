@@ -1,4 +1,5 @@
 #include "dog.h"
+#include <stdlib.h>
 /**
  * init_dog - initialize an instance for struct dog
  * @d: My pointer to struct dog
@@ -8,6 +9,8 @@
  */
 void init_dog(struct dog *d, char *name, float age, char *owner)
 {
+	if (d == NULL)
+		free(d);
 	d->name = name;
 	d->age = age;
 	d->owner = owner;
