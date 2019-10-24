@@ -26,6 +26,6 @@ int main(int argc, char **argv)
 	}
 	m = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
-		printf("%x ", m[i]);
-	printf("%x\n", m[i]);
+		printf("%02x ", m[i]);
+	printf("\n");
 }
