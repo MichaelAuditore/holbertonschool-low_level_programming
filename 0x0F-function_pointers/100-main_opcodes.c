@@ -11,7 +11,6 @@ int main(int argc, char **argv)
 {
 	int i;
 	int bytes;
-	char *m;
 
 	if (argc != 2)
 	{
@@ -24,8 +23,12 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(2);
 	}
-	m = (unsigned char *)main;
 	for (i = 0; i < bytes; i++)
-		printf("%02x ", m[i]);
-	printf("\n");
+	{
+		printf("%02x", ((unsigned char *)main)[i]);
+		if (i != (bytes - 1))
+			printf(" ");
+		else
+			printf("\n");
+	}
 }
