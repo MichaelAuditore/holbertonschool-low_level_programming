@@ -1,6 +1,7 @@
 #include "3-calc.h"
 #include <stdlib.h>
 #include <string.h>
+#include <stdio.h>
 /**
  * main - executes the math operations
  * @argc: Argument counter
@@ -9,22 +10,27 @@
  */
 int main(int argc, char **argv)
 {
-	if (argc > 5 || argc < 5)
+	int res;
+	int n1 = atoi(argv[1]);
+	int n2 = atoi(argv[3]);
+
+	if (argc > 4 || argc < 4)
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(98);
 	}
-	if (argv[2] != '+' || argv[2] != '-' || argv[2] != '*'
-	    || argv[2] != '/' || argv[2] != '%')
+	if (*argv[2] != '+' && *argv[2] != '-' && *argv[2] != '*'
+		&& *argv[2] != '/' && *argv[2] != '%')
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(99);
 	}
-	if (argv[3] == 0 && (argv[2] == '/' || argv[2] == '%'))
+	if (*argv[3] == 0 && (*argv[2] == '/' || *argv[2] == '%'))
 	{
-		printf("Error");
+		printf("Error\n");
 		exit(100);
 	}
-	get_op_func(argv[2])(atoi(argv[1]), atoi(argv[3]));
+	res = get_op_func(argv[2])(n1, n2);
+	printf("%d\n", res);
 	return (0);
 }
