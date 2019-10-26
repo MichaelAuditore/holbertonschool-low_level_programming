@@ -1,16 +1,17 @@
-	global main
+global main
 
 	section .text
 main:
 	mov rax, 1
 	mov rdi, 1
-	mov rsi, message
-	mov rdx, 17
+	mov rsi, msg
+	mov rdx, msglen
 	syscall
 
 	mov eax, 60
-	mov rdi, rdi
+	mov rdi, 0
 	syscall
 
-message:
-	db "Hello, Holberton", 10
+	section .rodata
+msg:	db "Hello, Holberton", 10
+msglen:	 equ $ - msg
