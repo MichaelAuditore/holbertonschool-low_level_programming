@@ -1,81 +1,47 @@
 #include "variadic_functions.h"
 /**
- * print_char - print a char
- * @args: List of variadic arguments
+ * print_all - prints argum
+ * @format: All formats to print
+ * @...: varargs
  */
-void print_char(va_list args)
+void print_all(const char * const format, ...)
 {
-	printf("%c", va_arg(args, int));
-}
-/**
- * print_int - print a integer
- * @args: List of variadic arguments
- */
-void print_int(va_list args)
-{
-	printf("%i", va_arg(args, int));
-}
-
-/**
- * print_float - print a float
- * @args: List of variadic arguments
- */
-void print_float(va_list args)
-{
-	printf("%f", va_arg(args, double));
-}
-
-/**
- * print_string - print a string
- * @args: List of variadic arguments
- */
-void print_string(va_list args)
-{
+	va_list list;
+	int i = 0;
 	char *str;
 
-	str = va_arg(args, char*);
-	if (str == NULL)
-		str = "(nil)";
-	printf("%s", str);
-}
-/**
- * print_all - print all arguments of any type
- * @format: Pointer of formats to print and evaluate
- * @...: Variadic arguments to print
- */
-
-void print_all(const char * const format, ...)
-
-{
-	int i;
-	va_list args;
-	char *coma;
-	form_at funcs[] = {
-		{'c', print_char},
-		{'f', print_float},
-		{'i', print_int},
-		{'s', print_string}
-	};
-	int j;
-
-	i = 0;
-	va_start(args, format);
-	coma = "";
+	va_start(list, format);
+	while (format == NULL)
+	{
+		printf("\n");
+		return;
+	}
 	while (format[i] != '\0')
 	{
-		j = 0;
-		while (j < 4)
+		switch (format[i])
 		{
-			if (format[i] == funcs[j].c)
-			{
-				printf("%s", coma);
-				funcs[j].f(args);
-				coma = ", ";
-			}
-			j++;
+		case 'i':
+			printf("%i", va_arg(list, int));
+			break;
+		case 'c':
+			printf("%c", (char) va_arg(list, int));
+			break;
+		case 'f':
+			printf("%f", (float) va_arg(list, double));
+			break;
+		case 's':
+			str = va_arg(list, char *);
+			if (str == NULL)
+				str = "(nil)";
+			printf("%s", str);
+			break;
+		}
+		if (format[i + 1] != '\0')
+		{
+			printf(", ");
 		}
 		i++;
 	}
 	printf("\n");
-	va_end(args);
+	va_end(list);
 }
