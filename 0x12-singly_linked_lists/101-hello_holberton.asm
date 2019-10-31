@@ -15,4 +15,3 @@ main:
 
 	mov  ebx, 1
 	mov  eax, 0
-	int  0x80
