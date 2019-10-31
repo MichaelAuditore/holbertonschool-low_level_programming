@@ -22,14 +22,14 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *last = *head;
 
 	if (tmp == NULL)
-		return(NULL);
+		return (NULL);
 
 	if (str != NULL)
 	{
 		tmp->str = strdup(str);
 		if (tmp->str == NULL)
 		{
-			return (NULL)
+			return (NULL);
 		}
 		tmp->len = _strlen(str);
 	}
