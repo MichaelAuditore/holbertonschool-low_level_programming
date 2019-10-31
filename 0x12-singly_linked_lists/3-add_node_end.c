@@ -21,6 +21,9 @@ list_t *add_node_end(list_t **head, const char *str)
 	list_t *tmp = malloc(sizeof(list_t));
 	list_t *last = *head;
 
+	if (tmp == NULL)
+		return(NULL);
+
 	if (str != NULL)
 	{
 		tmp->str = strdup(str);
@@ -40,5 +43,6 @@ list_t *add_node_end(list_t **head, const char *str)
 	while (last->next != NULL)
 		last = last->next;
 	last->next = tmp;
+	free(tmp);
 	return (*head);
 }
