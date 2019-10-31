@@ -11,6 +11,7 @@ int _strlen(const char *str)
 /**
  * add_node - add a node into list
  * @head: Address of first element in the list
+ * @str: Array of char to add
  * Return: List with all nodes added
  */
 list_t *add_node(list_t **head, const char *str)
