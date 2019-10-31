@@ -1,4 +1,5 @@
 #include "lists.h"
+#include <string.h>
 /**
  * _strlen - returns the length of string
  * @str: Array of char to validate the length
@@ -30,5 +31,9 @@ list_t *add_node(list_t **head, const char *str)
 	}
 	new->next = (*head);
 	(*head) = new;
-	return (*head);
+
+	if (*head != NULL)
+		return (*head);
+
+	return (NULL);
 }
