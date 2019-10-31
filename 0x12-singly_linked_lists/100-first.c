@@ -1,10 +1,11 @@
 #include <stdio.h>
+void ForFun(void) __attribute__ ((constructor));
 /**
- * function - prints a string
- * Return: Always is 0
+ * ForFun - prints a string before execute main function
+ * Not return
  */
-void myStartupFun (void) __attribute__ ((constructor));
-void myStartupFun (void)
+void ForFun(void)
 {
-	printf ("You're beat! and yet, you must allow,\nI bore my house upon my back!\n");
+	printf("You're beat! and yet, you must allow,\
+\nI bore my house upon my back!\n");
 }
