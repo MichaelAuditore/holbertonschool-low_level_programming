@@ -5,9 +5,12 @@
  */
 void free_listint2(listint_t **head)
 {
+	listint_t **tmp = head;
 	listint_t *current = *head;
 	listint_t *next;
 
+	if (tmp == NULL)
+		return;
 	if (current == NULL)
 		return;
 	while (current != NULL)
