@@ -22,10 +22,9 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		pos++;
 	}
-	pos--;
-	while ((int) pos >= 0)
+	while (pos > 0)
 	{
-		if (b[pos] == '1' && b[pos + 1] == '\0')
+		if (b[pos - 1] == '1' && b[pos] == '\0')
 		{
 			power = 2;
 			number += 1;
@@ -33,7 +32,7 @@ unsigned int binary_to_uint(const char *b)
 		}
 		else
 		{
-			if (b[pos] == '0' && b[pos + 1] == '\0')
+			if (b[pos - 1] == '0' && b[pos] == '\0')
 			{
 				power = 2;
 				pos--;
@@ -41,7 +40,7 @@ unsigned int binary_to_uint(const char *b)
 			else
 				power += power;
 		}
-		if (b[pos] == '1' && b[pos + 1] != '\0')
+		if (b[pos - 1] == '1' && b[pos] != '\0')
 			number += power;
 		pos--;
 	}
