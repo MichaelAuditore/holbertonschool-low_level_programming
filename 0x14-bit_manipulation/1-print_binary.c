@@ -1,9 +1,7 @@
 #include "holberton.h"
 /**
- *
- *
- *
- *
+ * print_binary - print a decimal into binary
+ * @n: number to convert
  */
 void print_binary(unsigned long int n)
 {
