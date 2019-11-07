@@ -6,14 +6,9 @@
  */
 unsigned int binary_to_uint(const char *b)
 {
-	unsigned int number = 0;
-	unsigned int power = 0;
-	unsigned int pos = 0;
+	unsigned int number = 0, power = 0, pos = 0;
 
-	if (*b == '1' && *(b + 1) == '\0')
-		return (1);
-
-	if (*b == '\0' || b == NULL)
+	if (b == 0)
 		return (0);
 
 	while (b[pos] != '\0')
@@ -22,6 +17,8 @@ unsigned int binary_to_uint(const char *b)
 			return (0);
 		pos++;
 	}
+	if (pos == 1)
+		return (*b - '0');
 	while (pos > 0)
 	{
 		if (b[pos - 1] == '1' && b[pos] == '\0')
