@@ -20,16 +20,9 @@ int create_file(const char *filename, char *text_content)
 	if (file == -1)
 		return (-1);
 	if (text_content == NULL)
-	{
-		close(file);
-		return (1);
-	}
+		return (close(file) == -1 ? -1 : 1);
 	w = write(file, text_content, length);
 	if (w == -1)
-	{
-		close(file);
 		return (-1);
-	}
-	close(file);
-	return (1);
+	return (close(file) == -1 ? -1 : 1);
 }
