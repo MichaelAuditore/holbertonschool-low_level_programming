@@ -19,11 +19,8 @@ int append_text_to_file(const char *filename, char *text_content)
 	if (file == -1)
 		return (-1);
 
-	if (text_content == NULL && file == 1)
-	{
-		close(file);
-		return (1);
-	}
+	if (text_content == NULL && file != -1)
+		return (close(file) == -1 ? -1 : 1);
 	while (text_content[len] != '\0')
 		len++;
 
