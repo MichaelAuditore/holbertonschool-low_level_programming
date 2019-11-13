@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 		if (w != r)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			exit(98);
+			exit(99);
 		}
 	}
 	if (r == -1)
