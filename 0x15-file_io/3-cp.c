@@ -1,32 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
 /**
- * verify_close - verify if write into new file
- * @w: File Id
- */
-void verify_close(int w)
-{
-	if (close(w) == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", w);
-		exit(100);
-	}
-}
-/**
- * verify_open - verify if write into new file
- * @w: File Id
- * @filename: To Know if copy or not
- */
-void verify_open(int w, char *filename)
-{
-	if (w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", filename);
-		exit(98);
-	}
-}
-
-/**
  * main - copy a string of a file into another file
  * @argc: Counter of arguments
  * @argv: Pointer to pointer of arguments
@@ -34,22 +8,23 @@ void verify_open(int w, char *filename)
  */
 int main(int argc, char **argv)
 {
-	char *buffer;
+	char buffer[1024];
 	int file_to;
 	int file_from;
-	int r = 0, w = 0;
+	int r = 0, w = 0, c = 0;
 
-	buffer = malloc(1024);
 	if (argc != 3)
-	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
-	}
-	file_from = open(argv[1], O_RDONLY);
-	verify_open(file_from, argv[1]);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"), exit(97);
 
+	file_from = open(argv[1], O_RDONLY);
+	if (file_from == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
 	file_to = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
-	verify_open(file_to, argv[2]);
+	if (file_to == -1)
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]), exit(99);
 
 	while ((r = read(file_from, buffer, 1024)) > 0)
 	{
@@ -63,10 +38,13 @@ int main(int argc, char **argv)
 	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(99);
+		exit(98);
 	}
-	verify_close(file_from);
-	verify_close(file_to);
-	free(buffer);
-	return (1);
+	c = close(file_from);
+	if (c == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_from), exit(100);
+	c = close(file_to);
+	if (c == -1)
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file_to), exit(100);
+	return (0);
 }
