@@ -37,7 +37,7 @@ int main(int argc, char **argv)
 	char *buffer;
 	int file_to;
 	int file_from;
-	int r = 0, w = 0, i = 0;
+	int r = 0, w = 0;
 
 	buffer = malloc(1024);
 	if (argc != 3)
@@ -48,26 +48,21 @@ int main(int argc, char **argv)
 	file_from = open(argv[1], O_RDONLY);
 	verify_open(file_from, argv[1]);
 
-	if (file_from == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
 	file_to = open(argv[2], O_TRUNC | O_CREAT | O_WRONLY, 0664);
 	verify_open(file_to, argv[2]);
 
-	r = read(file_from, buffer, 1024);
+	while ((r = read(file_from, buffer, 1024)) > 0)
+	{
+		w = write(file_to, buffer, r);
+		if (w != r)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(98);
+		}
+	}
 	if (r == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-		exit(98);
-	}
-	while (buffer[i] != '\0')
-		i++;
-	w = write(file_to, buffer, i);
-	if (w == -1)
-	{
-		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
 	verify_close(file_from);
