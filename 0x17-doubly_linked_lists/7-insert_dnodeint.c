@@ -4,11 +4,14 @@
  * @h: reference to the first node of the linked list
  * Return: length of linked list
  */
-size_t dlistint_len(const dlistint_t *h)
+unsigned int n_nodes(dlistint_t *h)
 {
-	if (h == NULL)
-		return (0);
-	return (1 + dlistint_len(h->next != NULL ? h->next : NULL));
+	unsigned int num = 0;
+	dlistint_t *next;
+
+	for (next = h; next; num++, next = next->next)
+		;
+	return (num);
 }
 /**
  * insert_dnodeint_at_index - insert a node in a given position
@@ -21,21 +24,21 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
 	dlistint_t *new;
 	dlistint_t *tmp = *h;
-	unsigned int i = 0;
+	unsigned int i = 1;
 
-	if (idx > dlistint_len(*h))
-		return (NULL);
-	if ((*h == NULL && idx > 0))
+	if (h == NULL)
 		return (NULL);
 	if (idx == 0 || *h == NULL)
 		new = add_dnodeint(h, n);
-	else if (idx == dlistint_len(*h))
+	if (idx > n_nodes(*h))
+		return (NULL);
+	if (idx == n_nodes(*h))
 		new = add_dnodeint_end(h, n);
 	else
 	{
 		while (tmp != NULL)
 		{
-			if (i == idx - 1)
+			if (i == idx)
 			{
 				new = malloc(sizeof(dlistint_t));
 				if (new == NULL)
