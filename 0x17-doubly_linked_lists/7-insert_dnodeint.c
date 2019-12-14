@@ -1,6 +1,6 @@
 #include "lists.h"
 /**
- * dlistint_len - gets the length of a doubly linked list
+ * n_nodes - gets the length of a doubly linked list
  * @h: reference to the first node of the linked list
  * Return: length of linked list
  */
