@@ -1,0 +1,5 @@
+# Creating an executable with all rule and variables to compile
+CC=gcc
+SRC=main.c holberton.c
+all: $(SRC)
+	$(CC) $(SRC) -o holberton
