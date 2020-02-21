@@ -1,2 +1,3 @@
-holberton : main.c holberton.c
+# create holberton executable using all rule
+all: main.c holberton.c
 	gcc main.c holberton.c -o holberton
